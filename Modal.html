@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Modal</title>
+</head>
+
+<body>
+  <div class="nav">
+    <h1 class="title">Library</h1>
+    <ul class="nav-wrap">
+      <li class="nav-list"><a class="nav-anchor" href="Tab.html">Tab</a></li>
+      <li class="nav-list"><a class="nav-anchor active" href="Modal.html">Modal</a></li>
+      <li class="nav-list"><a class="nav-anchor" href="Tooltip.html">Tooltip</a></li>
+      <li class="nav-list"><a class="nav-anchor" href="Slide.html">Slide</a></li>
+      <li class="nav-list"><a class="nav-anchor" href="Sort.html">Sort</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="black-bg">
+      <div class="white-bg">
+        <h1>Modal</h1>
+        <p>모달창 상세 내용 입니당</p>
+        <button class="btn close">닫기</button>
+      </div>
+    </div>
+    <button class="btn modal-btn">Modal</button>
+  </div>
+  <script>
+    let openBtn = document.querySelector('.modal-btn');
+    let closeBtn = document.querySelector('.close');
+    let modal = document.querySelector('.black-bg');
+
+    openBtn.addEventListener('click', function () {
+      modal.classList.remove('slide-up');
+      modal.classList.add('slide-down');
+    });
+    closeBtn.addEventListener('click', function () {
+      modal.classList.add('slide-up');
+      setTimeout(() => {
+        modal.classList.remove('slide-down');
+      }, 500);
+    });
+    modal.addEventListener('click', function (e) {
+      if (e.target == e.currentTarget) {
+        modal.classList.add('slide-up');
+        setTimeout(() => {
+          modal.classList.remove('slide-down');
+        }, 500);
+      };
+    });
+  </script>
+</body>
+
+</html>
