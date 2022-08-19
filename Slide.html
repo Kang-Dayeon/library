@@ -26,7 +26,7 @@
         <li class="slide-item"><img src="./img/01.jpeg" class="slide-image"></li>
         <li class="slide-item"><img src="./img/02.jpeg" class="slide-image"></li>
         <li class="slide-item"><img src="./img/03.jpeg" class="slide-image"></li>
-        <li class="slide-item"><img src="./img/04.jpeg" class="slide-image"></li>
+        <!-- <li class="slide-item"><img src="./img/04.jpeg" class="slide-image"></li> -->
       </ul>
       <p class="controller">
         <span class="prev">&lang;</span>
@@ -35,7 +35,64 @@
     </div>
   </div>
 
-  <script></script>
+  <script>
+    const slide = document.querySelector('.slide');
+    const slideImg = document.querySelectorAll('.slide-item');
+    let currentImg = 0;
+    let slideCount = slideImg.length;
+    const slideWidth = 800;
+    const slideMargin = 100;
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    clone();
+    init();
+
+    function clone() {
+      let firstImg = slideImg[0].cloneNode(true);
+      let lastImg = slideImg[3].cloneNode(true);
+      slide.append(firstImg);
+      slide.insertBefore(lastImg, slide.firstElementChild);
+    }
+
+    function init() {
+      slide.style.width = (slideWidth + slideMargin) * slideCount + 2 + 'px';
+      slide.style.left = -(slideWidth + slideMargin) + 'px';
+    }
+
+    nextBtn.addEventListener('click', function () {
+      if (currentImg <= slideCount - 1) {
+        slide.style.left = -(currentImg + 2) * (slideWidth + slideMargin) + 'px';
+        slide.style.transition = `${0.5}s ease-out`;
+      }
+      if (currentImg === slideCount - 1) {
+        //마지막 슬라이드 일때
+        setTimeout(function () {
+          //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
+          slide.style.left = -(slideWidth + slideMargin) + 'px';
+          slide.style.transition = `${0}s ease-out`;
+        }, 500);
+        currentImg = -1;
+      }
+      currentImg += 1;
+    });
+    prevBtn.addEventListener('click', function () {
+      //이전 버튼 눌렀을때
+      if (currentImg >= 0) {
+        slide.style.left = -currentImg * (slideWidth + slideMargin) + 'px';
+        slide.style.transition = `${0.5}s ease-out`;
+      }
+      if (currentImg === 0) {
+        setTimeout(function () {
+          slide.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
+          slide.style.transition = `${0}s ease-out`;
+        }, 500);
+        currentImg = slideCount;
+      }
+      currentImg -= 1;
+    });
+
+  </script>
 </body>
 
 </html>

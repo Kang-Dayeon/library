@@ -222,11 +222,14 @@ ul.list::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 3200px;
+  width: 3700px;
 }
-.slide-item{
+.slide-item:not(:last-child){
   float: left;
   margin-right: 100px;
+}
+.slide-item:first-child{
+  /* margin-left: 100px; */
 }
 .slide-item:last-child{
   margin-right: 0;
