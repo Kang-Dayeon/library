@@ -209,3 +209,44 @@ ul.list::after {
   left: calc(50% - 5px);
   border-color: transparent transparent #000 transparent;
 }
+/* slide */
+.slide-wrap{
+  position: relative;
+  margin: 50px auto;
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+}
+.slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3200px;
+}
+.slide-item{
+  float: left;
+  margin-right: 100px;
+}
+.slide-item:last-child{
+  margin-right: 0;
+}
+.slide-image{
+  width: 100%;
+}
+.controller span{
+  position: absolute;
+  top: calc(50% - 25px);
+  z-index: 20;
+  color: #fff;
+  font-size: 50px;
+  line-height: 1;
+  font-weight: bold;
+  cursor: pointer;
+}
+.prev{
+  left: 10px;
+}
+.next{
+  right: 10px;
+}
