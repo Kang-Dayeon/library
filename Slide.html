@@ -41,7 +41,7 @@
     let currentImg = 0;
     let slideCount = slideImg.length;
     const slideWidth = 800;
-    const slideMargin = 100;
+    const slideMargin = 50;
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
 
@@ -50,7 +50,7 @@
 
     function clone() {
       let firstImg = slideImg[0].cloneNode(true);
-      let lastImg = slideImg[3].cloneNode(true);
+      let lastImg = slideImg[2].cloneNode(true);
       slide.append(firstImg);
       slide.insertBefore(lastImg, slide.firstElementChild);
     }

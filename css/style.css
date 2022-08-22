@@ -214,7 +214,7 @@ ul.list::after {
   position: relative;
   margin: 50px auto;
   width: 800px;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
   transition: 0.5s ease-in;
 }
@@ -223,13 +223,15 @@ ul.list::after {
   top: 0;
   left: 0;
   width: 3700px;
+  /* border: 5px solid red; */
 }
-.slide-item:not(:last-child){
+.slide-item{
+  width: 800px;
   float: left;
-  margin-right: 100px;
+  margin-right: 50px;
 }
-.slide-item:first-child{
-  /* margin-left: 100px; */
+.slide-item:last-child{
+  margin-right: 0;
 }
 .slide-item:last-child{
   margin-right: 0;
