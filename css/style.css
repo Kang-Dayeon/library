@@ -11,11 +11,11 @@ a{
  color: black; 
 }
 .btn{
-  padding:10px;
+  padding: 10px;
   min-width: 100px;
   font-size: 18px;
   border: none;
-  border-radius: 5px 10px;
+  border-radius: 10px;
   background-color: #fff;
   -webkit-box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.4);
   box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.4);
@@ -223,7 +223,6 @@ ul.list::after {
   top: 0;
   left: 0;
   width: 3700px;
-  /* border: 5px solid red; */
 }
 .slide-item{
   width: 800px;
@@ -254,4 +253,72 @@ ul.list::after {
 }
 .next{
   right: 10px;
+}
+
+/* sort */
+.sort-btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sort-btn .btn{
+  margin-left: 10px;
+  font-size: 16px;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+.search-box{
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+.btn.search{
+  margin-left: 0;
+  background-color: transparent;
+  border:none;
+  border-radius: 0;
+  border-left: 1px solid rgba(0,0,0,0.3);
+}
+.search-box input{
+  padding: 0 10px;
+  margin: 0;
+  width: 200px;
+  font-size: 16px;
+  border: none;
+}
+.search-box input:focus{
+  outline: none;
+}
+.card-container{
+  overflow: hidden;
+}
+.card{
+  margin-top: 30px;
+  float: left;
+  width: 25%;
+  border: 1px solid #fff;
+}
+.card::after{
+  display: none;
+  overflow: hidden;
+  content: '';
+}
+.card-img{
+  width: 100%;
+  height: 500px;
+}
+.card-img img{
+  width: 100%;
+  height: 100%;
+}
+.card-body{
+  padding: 15px 10px;
+  background-color: #eee;
+}
+.card-title{
+  margin-top: 5px;
+  font-size: 22px;
+}
+.card-desc{
+  margin-top: 10px;
+  font-size: 18px;
 }

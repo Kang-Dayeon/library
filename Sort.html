@@ -20,6 +20,63 @@
       <li class="nav-list"><a class="nav-anchor active" href="Sort.html">Sort</a></li>
     </ul>
   </div>
+  <div class="content">
+    <div class="sort-btn">
+      <div class="search-box">
+        <input type="text" id="price-input" placeholder="가격을 입력해주세요">
+        <button class="btn search">검색</button>
+      </div>
+      <button class="btn price">가격순</button>
+      <button class="btn name">가나다순</button>
+      <button class="btn reset">초기화</button>
+    </div>
+    <div class="card-container">
+      <!-- 자동으로 요소가 추가되는 영역 -->
+    </div>
+  </div>
+  <script>
+    const cardContainer = document.querySelector('.card-container');
+    console.log(cardContainer);
+
+    const products = [
+      { id: 0, img: 'https://images.unsplash.com/photo-1631233859262-0d7b12ea7d4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', title: 'Blossom Dress', price: 74500000 },
+      { id: 1, img: 'https://images.unsplash.com/photo-1583778477928-531a25a0baf2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', title: 'Springfield Dress', price: 56500 },
+      { id: 2, img: 'https://images.unsplash.com/photo-1571513722275-4b41940f54b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', title: 'Black jacket', price: 109500 },
+      { id: 3, img: 'https://images.unsplash.com/photo-1559127452-4ab7dc5366bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80', title: 'Apple Shirt', price: 40400 },
+      { id: 4, img: 'https://images.unsplash.com/photo-1591567462127-1f25099900ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1066&q=80', title: 'Short Dress', price: 124500 }
+    ]
+
+    function productList() {
+      products.forEach(function (i) {
+        const card = document.createElement('div');
+        const cardImg = document.createElement('div');
+        const img = document.createElement('img');
+        const cardBody = document.createElement('div');
+        const title = document.createElement('h1');
+        const desc = document.createElement('p');
+
+        card.classList.add('card');
+        cardImg.classList.add('card-img');
+        cardBody.classList.add('card-body');
+        title.classList.add('card-title');
+        desc.classList.add('card-desc');
+
+        card.appendChild(cardImg);
+        card.appendChild(cardBody);
+        cardImg.appendChild(img);
+        cardBody.appendChild(title);
+        cardBody.appendChild(desc);
+
+        title.innerHTML = i.title;
+        desc.innerHTML = i.price.toLocaleString('ko-KR') + '₩';
+        img.src = i.img;
+
+        cardContainer.append(card)
+      })
+    }
+
+    productList();
+  </script>
 </body>
 
 </html>
