@@ -23,8 +23,9 @@
   <div class="content">
     <div class="sort-btn">
       <div class="search-box">
-        <input type="text" id="price-input" placeholder="가격을 입력해주세요">
-        <button class="btn search">검색</button>
+        <input type="text" id="price-input" placeholder="가격을 입력하세요.">
+        <button class="btn row-search">이하</button>
+        <button class="btn up-search">이상</button>
       </div>
       <button class="btn price">가격순</button>
       <button class="btn name">가나다순</button>
@@ -39,7 +40,8 @@
     const priceBtn = document.querySelector('.price');
     const nameBtn = document.querySelector('.name');
     const resetBtn = document.querySelector('.reset');
-    const searchBtn = document.querySelector('.search');
+    const rowSearchBtn = document.querySelector('.row-search');
+    const upSearchBtn = document.querySelector('.up-search');
     const priceInput = document.getElementById('price-input');
 
     // 상품 요소 추가
@@ -51,8 +53,11 @@
       { id: 4, img: 'https://images.unsplash.com/photo-1591567462127-1f25099900ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1066&q=80', title: 'Short Dress', price: 124500 }
     ]
 
-    function productList() {
-      products.forEach(function (i) {
+    const newProduct = [...products];
+
+    // 요소 만드는 함수
+    function productList(obj) {
+      obj.forEach((i) => {
         const card = document.createElement('div');
         const cardImg = document.createElement('div');
         const img = document.createElement('img');
@@ -81,41 +86,67 @@
       })
     }
 
-    productList();
+    window.onload = productList(products);
 
-    console.log(document.querySelectorAll('.card-title'));
-
-    const cardTitle = document.querySelectorAll('.card-title');
-    const cardPrice = document.querySelectorAll('.card-desc');
-    const cardImg = document.querySelectorAll('.image');
+    // reset
+    resetBtn.addEventListener('click', () => {
+      cardContainer.innerHTML = "";
+      productList(newProduct);
+    });
 
     // 상품목록 바꿔주는 함수
-    const sortProduct = function () {
+    const sortProduct = () => {
+      const cardTitle = document.querySelectorAll('.card-title');
+      const cardPrice = document.querySelectorAll('.card-desc');
+      const cardImg = document.querySelectorAll('.image');
       for (let i = 0; i < products.length; i++) {
         cardTitle[i].innerHTML = products[i].title;
         cardPrice[i].innerHTML = products[i].price.toLocaleString('ko-KR') + '₩';
         cardImg[i].src = products[i].img;
-      }
+      };
     };
 
     // sort
-    priceBtn.addEventListener('click', function () {
-      products.sort(function (a, b) {
+    // 가격순
+    priceBtn.addEventListener('click', () => {
+      products.sort((a, b) => {
         return a.price - b.price
       });
       sortProduct();
     });
-
-    nameBtn.addEventListener('click', function () {
-      products.sort(function (a, b) {
+    // 가나다순
+    nameBtn.addEventListener('click', () => {
+      products.sort((a, b) => {
         if (a.title < b.title) {
           return -1
         } else {
           return 1
         }
-      })
+      });
       sortProduct();
-    })
+    });
+    // 검색한 가격이하 상품만
+    let inputValue = priceInput.value;
+
+    rowSearchBtn.addEventListener('click', () => {
+      cardContainer.innerHTML = "";
+      const newFilter = products.filter((a) => {
+        return a.price <= inputValue
+      });
+      productList(newFilter);
+    });
+
+    upSearchBtn.addEventListener('click', () => {
+      cardContainer.innerHTML = "";
+      const newFilter = products.filter((a) => {
+        return a.price >= inputValue
+      });
+      productList(newFilter);
+    });
+
+
+
+
   </script>
 </body>
 
