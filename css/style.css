@@ -328,11 +328,6 @@ ul.list::after {
   width: 25%;
   border: 1px solid #fff;
 }
-.card::after{
-  display: none;
-  overflow: hidden;
-  content: '';
-}
 .card-img{
   width: 100%;
   height: 500px;
