@@ -348,3 +348,43 @@ ul.list::after {
   margin-top: 10px;
   font-size: 18px;
 }
+/* Accordion */
+.accordion{
+  width: 500px;
+  border: 1px solid black;
+  text-align: center;
+}
+.accordion a{
+  display: block;
+  color: #fff;
+}
+.accordion-list{
+  background-color: #0277bd;
+  font-size: 20px;
+  border-top: 1px solid #fff;
+}
+.accordion-list:first-child{
+  border: none;
+}
+.accordion-anchor{
+  padding: 10px 0;
+}
+.depth{
+  display: none;
+  margin-top: -1000px;
+  opacity: 0;
+  background-color: #004c8c;
+  transition: all 0.3s ease-in;
+}
+.depth.active{
+  display: block;
+  margin: 0;
+  opacity: 1;
+}
+.depth-list{
+  padding: 10px 0;
+  border-top: 1px solid #fff;
+}
+.depth-list:first-child{
+  border: none;
+}
