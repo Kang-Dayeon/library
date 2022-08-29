@@ -40,6 +40,26 @@
       </li>
     </ul>
   </div>
+  <script>
+    const accordion = document.querySelector('.accordion');
+    const accordionBtn = document.querySelectorAll('.accordion-anchor');
+    const depth = document.querySelectorAll('.depth');
+
+    function open(i) {
+      for (let j = 0; depth.length > j; j++) {
+        depth[j].classList.remove('active');
+        console.log(depth[j]);
+      }
+      depth[i].classList.add('active');
+    }
+
+    accordion.addEventListener('click', (e) => {
+      // console.log(e.currentTarget.children);
+      open(e.currentTarget);
+      // if (e.currentTarget == e.target) {
+      // }
+    });
+  </script>
 </body>
 
 </html>
