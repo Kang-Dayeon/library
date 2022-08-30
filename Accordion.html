@@ -24,15 +24,26 @@
   <div class="content">
     <ul class="accordion">
       <li class="accordion-list">
-        <a href="#" class="accordion-anchor">accordion menu1</a>
+        <a href="#" class="accordion-anchor" data-id="0">home</a>
         <ul class="depth">
           <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
           <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
         </ul>
       </li>
       <li class="accordion-list">
-        <a href="#" class="accordion-anchor">accordion menu1</a>
+        <a href="#" class="accordion-anchor" data-id="1">about</a>
         <ul class="depth">
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
+        </ul>
+      </li>
+      <li class="accordion-list">
+        <a href="#" class="accordion-anchor" data-id="2">list</a>
+        <ul class="depth">
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
+          <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
           <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
           <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
           <li class="depth-list"><a href="#" class="depth-anchor">accordion menu2</a></li>
@@ -41,23 +52,30 @@
     </ul>
   </div>
   <script>
-    const accordion = document.querySelector('.accordion');
     const accordionBtn = document.querySelectorAll('.accordion-anchor');
     const depth = document.querySelectorAll('.depth');
+    const elHeight = 51;
 
-    function open(i) {
-      for (let j = 0; depth.length > j; j++) {
-        depth[j].classList.remove('active');
-        console.log(depth[j]);
+    function openAccordion(i) {
+      const depthListHeight = depth[i].children.length;
+      let classCheck = depth[i].classList.contains('active');
+      // for (let j = 0; j < depth.length; j++) {
+      //   depth[j].style.height = 0 + 'px';
+      //   depth[j].classList.remove('active');
+      // };
+
+      if (classCheck) {
+        depth[i].style.height = 0 + 'px';
+        depth[i].classList.remove('active');
+      } else {
+        depth[i].style.height = (depthListHeight * elHeight) + 'px';
+        depth[i].classList.add('active');
       }
-      depth[i].classList.add('active');
-    }
-
-    accordion.addEventListener('click', (e) => {
-      // console.log(e.currentTarget.children);
-      open(e.currentTarget);
-      // if (e.currentTarget == e.target) {
-      // }
+    };
+    accordionBtn.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        openAccordion(e.target.getAttribute('data-id'));
+      });
     });
   </script>
 </body>

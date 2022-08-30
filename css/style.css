@@ -139,7 +139,7 @@ ul.list::after {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: rgba(0,0,0,0.5);
-  transition:transform 0.5s;
+  transition: transform 0.5s ease-in;
   transform:translateY(-1200px);
   opacity:0;
 }
@@ -247,7 +247,7 @@ ul.list::after {
   width: 800px;
   height: 400px;
   overflow: hidden;
-  transition: 0.5s ease-in;
+  transition: left 0.5s ease-in;
 }
 .slide{
   position: absolute;
@@ -351,7 +351,6 @@ ul.list::after {
 /* Accordion */
 .accordion{
   width: 500px;
-  border: 1px solid black;
   text-align: center;
 }
 .accordion a{
@@ -359,6 +358,7 @@ ul.list::after {
   color: #fff;
 }
 .accordion-list{
+  height: auto;
   background-color: #0277bd;
   font-size: 20px;
   border-top: 1px solid #fff;
@@ -370,16 +370,21 @@ ul.list::after {
   padding: 10px 0;
 }
 .depth{
-  display: none;
-  margin-top: -1000px;
+  width: 100%;
+  height: 0;
   opacity: 0;
   background-color: #004c8c;
   transition: all 0.3s ease-in;
 }
+.depth li{
+  display: none;
+}
 .depth.active{
-  display: block;
-  margin: 0;
   opacity: 1;
+  height: 400px;
+}
+.depth.active li {
+  display: block;
 }
 .depth-list{
   padding: 10px 0;
