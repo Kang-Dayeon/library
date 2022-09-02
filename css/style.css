@@ -85,6 +85,7 @@ a{
   left: 300px;
   padding: 50px 30px;
   width: calc(100% - 300px);
+  text-align: center;
 }
 /* Tab */
 ul.list {
@@ -392,4 +393,44 @@ ul.list::after {
 }
 .depth-list:first-child{
   border: none;
+}
+
+/* todo list */
+.todo-input{
+  margin-top: 20px;
+  padding: 5px 7px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.add-btn{
+  padding: 5px 0;
+  font-size: 14px;
+}
+.list-wrap{
+  margin: 0 auto;
+  max-width: 400px;
+}
+.todo-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 7px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  color: #004c8c;
+}
+.todo-list span{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.del-btn{
+  min-width: 50px;
+  font-size: 12px;
+  padding: 5px 0;
 }
