@@ -18,20 +18,48 @@
       <li class="nav-list"><a class="nav-anchor" href="Tooltip.html">Tooltip</a></li>
       <li class="nav-list"><a class="nav-anchor" href="Slide.html">Slide</a></li>
       <li class="nav-list"><a class="nav-anchor" href="Sort.html">Sort</a></li>
-      <li class="nav-list"><a class="nav-anchor" href="Accordion.html">Accordion</a></li>
+      <li class="nav-list"><a class="nav-anchor active" href="Accordion.html">Accordion</a></li>
     </ul>
   </div>
   <div class="content">
     <h1 class="main-title">Todo List</h1>
-    <input class="todo-input" type="text" placeholder="오늘 할 일을 적어 보세요!">
-    <button class="btn add-btn">추가</button>
-    <ul class="list-wrap">
-        <li class="todo-list"><span>투두리스트 리스트 입니당</span><button class="del-btn btn">삭제</button></li>
-        <li class="todo-list"><span>투두리스트 리스트 입니당투두리스트 리스트 입니당dcdecececece</span><button class="del-btn btn">삭제</button></li>
-    </ul>
+    <form id="todo-form">
+      <input class="todo-input" type="text" placeholder="Write and Enter!">
+    </form>
+    <ul id="todo-list"></ul>
   </div>
 
   <script>
+    const todoForm = document.getElementById('todo-form');
+    const todoInput = document.querySelector('.todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    function deleteTodo(e){
+      const delLi = e.target.parentElement;
+      delLi.remove();
+    }
+
+    function paintTodo(newTodo){
+      const todoItem = document.createElement('li');
+      const span = document.createElement('span');
+      const delBtn = document.createElement('button');
+      todoItem.classList.add('todo-item');
+      delBtn.classList.add('del-btn');
+      todoItem.appendChild(span);
+      todoItem.appendChild(delBtn);
+      delBtn.innerHTML = 'X';
+      span.innerHTML = newTodo;
+      todoList.appendChild(todoItem);
+      delBtn.addEventListener('click', deleteTodo);
+    };
+    function handleTodoSubmit(e){
+      e.preventDefault();
+      const newTodo = todoInput.value;
+      todoInput.value = "";
+      paintTodo(newTodo);
+    };
+
+    todoForm.addEventListener('submit', handleTodoSubmit);
 
   </script>
 </body>

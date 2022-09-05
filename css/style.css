@@ -404,33 +404,38 @@ ul.list::after {
   font-size: 16px;
   border-bottom: 1px solid rgba(0,0,0,0.3);
 }
-.add-btn{
+/* .add-btn{
   padding: 5px 0;
   font-size: 14px;
-}
-.list-wrap{
+} */
+#todo-list{
   margin: 0 auto;
   max-width: 400px;
 }
-.todo-list{
+.todo-item{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
   padding: 0 7px;
-  text-align: left;
   font-size: 14px;
   font-weight: bold;
   color: #004c8c;
+  
 }
-.todo-list span{
+.todo-item span{
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .del-btn{
-  min-width: 50px;
-  font-size: 12px;
-  padding: 5px 0;
+  /* min-width: 50px; */
+  padding: 5px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #004c8c;
 }
