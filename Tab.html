@@ -49,7 +49,7 @@
     let tabBtn = document.querySelectorAll('.tab-button');
     let tabContent = document.querySelectorAll('.tab-content');
 
-    function openTab(i) {
+    const openTab = i => {
       for (let j = 0; j < tabBtn.length; j++) {
         tabBtn[j].classList.remove('active');
         tabContent[j].classList.remove('show');
@@ -58,7 +58,7 @@
       tabContent[i].classList.add('show');
     };
 
-    list.addEventListener('click', function (e) {
+    list.addEventListener('click', e => {
       openTab(e.target.getAttribute('data-id'));
     });
   </script>
