@@ -58,7 +58,7 @@
     const newProduct = [...products];
 
     // 요소 만드는 함수
-    function productList(obj) {
+    const productList = obj => {
       obj.forEach((i) => {
         const card = document.createElement('div');
         const cardImg = document.createElement('div');
@@ -85,8 +85,8 @@
         img.src = i.img;
 
         cardContainer.append(card)
-      })
-    }
+      });
+    };
 
     window.onload = productList(products);
 
@@ -101,7 +101,7 @@
       const cardTitle = document.querySelectorAll('.card-title');
       const cardPrice = document.querySelectorAll('.card-desc');
       const cardImg = document.querySelectorAll('.image');
-      for (let i = 0; i < products.length; i++) {
+      for (const i in products) {
         cardTitle[i].innerHTML = products[i].title;
         cardPrice[i].innerHTML = products[i].price.toLocaleString('ko-KR') + '₩';
         cardImg[i].src = products[i].img;
@@ -127,21 +127,20 @@
       });
       sortProduct();
     });
-    // 검색한 가격이하 상품만
-    let inputValue = priceInput.value;
 
+    // 검색한 가격이하 상품만
     rowSearchBtn.addEventListener('click', () => {
       cardContainer.innerHTML = "";
       const newFilter = products.filter((a) => {
-        return a.price <= inputValue
+        return a.price <= priceInput.value
       });
       productList(newFilter);
     });
-
+    // 검색한 가격이상 상품만
     upSearchBtn.addEventListener('click', () => {
       cardContainer.innerHTML = "";
       const newFilter = products.filter((a) => {
-        return a.price >= inputValue
+        return a.price >= priceInput.value
       });
       productList(newFilter);
     });
