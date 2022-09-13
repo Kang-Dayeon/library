@@ -9,8 +9,8 @@ $text-point-color: #0277bd;
   line-height: 1.5;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 20px;
-  color: $text-point-color;
-  font-weight: 300;
+  color: #000;
+  font-weight: 400;
 }
 ul,li{
   list-style: none;
@@ -203,16 +203,16 @@ ul{
     color: #fff;
     border-radius: 5px;
   }
-  &:hover,
-  &-text{
-    visibility: visible;
-  }
-  &:hover,
-  &-text::after{
-    position: absolute;
-    content: "";
-    border-width: 5px;
-    border-style: solid;
+  &:hover{
+    .tooltip-text{
+      visibility: visible;
+      &::after{
+        position: absolute;
+        content: "";
+        border-width: 5px;
+        border-style: solid;
+      }
+    }
   }
   &-right{
     top: 0;

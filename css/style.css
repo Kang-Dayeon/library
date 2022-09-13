@@ -6,8 +6,8 @@
   line-height: 1.5;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 20px;
-  color: #0277bd;
-  font-weight: 300;
+  color: #000;
+  font-weight: 400;
 }
 
 ul, li {
@@ -206,10 +206,10 @@ ul.list::after {
   color: #fff;
   border-radius: 5px;
 }
-.tooltip:hover, .tooltip-text {
+.tooltip:hover .tooltip-text {
   visibility: visible;
 }
-.tooltip:hover, .tooltip-text::after {
+.tooltip:hover .tooltip-text::after {
   position: absolute;
   content: "";
   border-width: 5px;
