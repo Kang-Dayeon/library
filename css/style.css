@@ -449,4 +449,19 @@ ul.list::after {
   font-size: 14px;
   font-weight: bold;
   color: #004c8c;
+}
+
+.typing {
+  position: relative;
+  display: inline-block;
+  padding-right: 8px;
+}
+.typing::after {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 2px;
+  height: 30px;
+  background-color: #004c8c;
+  content: "";
 }/*# sourceMappingURL=style.css.map */
