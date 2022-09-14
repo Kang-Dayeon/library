@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap");
+@-webkit-keyframes typing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -457,10 +473,20 @@ ul.list::after {
   padding-right: 8px;
 }
 .typing::after {
+  -webkit-animation-name: typing;
+          animation-name: typing;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   position: absolute;
   top: 10px;
   right: 0;
-  width: 2px;
+  width: 4px;
   height: 30px;
   background-color: #004c8c;
   content: "";

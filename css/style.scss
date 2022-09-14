@@ -2,6 +2,15 @@
 $main-blue : #01579b;
 $dark-blue : #004c8c;
 $text-point-color: #0277bd;
+
+@keyframes typing {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 *{
   margin: 0;
   padding: 0;
@@ -444,10 +453,15 @@ ul{
   display: inline-block;
   padding-right: 8px;
   &::after{
+    animation-name: typing;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     position: absolute;
     top: 10px;
     right: 0;
-    width: 2px;
+    width: 4px;
     height: 30px;
     background-color: $dark-blue;
     content: '';
