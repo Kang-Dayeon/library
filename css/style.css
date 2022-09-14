@@ -134,11 +134,11 @@ ul.list::after {
   cursor: pointer;
 }
 .tab-button.active {
-  border-top: 2px solid orange;
+  border-top: 2px solid #004c8c;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid white;
   border-left: 1px solid #ccc;
-  color: black;
+  color: #0277bd;
   margin-top: -2px;
 }
 .tab-content {
