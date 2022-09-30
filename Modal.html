@@ -36,21 +36,21 @@
     <button class="btn modal-btn">Modal</button>
   </div>
   <script>
-    let openBtn = document.querySelector('.modal-btn');
-    let closeBtn = document.querySelector('.close');
-    let modal = document.querySelector('.black-bg');
+    const openBtn = document.querySelector('.modal-btn');
+    const closeBtn = document.querySelector('.close');
+    const modal = document.querySelector('.black-bg');
 
-    openBtn.addEventListener('click', function () {
+    openBtn.addEventListener('click', () => {
       modal.classList.remove('slide-up');
       modal.classList.add('slide-down');
     });
-    closeBtn.addEventListener('click', function () {
+    closeBtn.addEventListener('click', () => {
       modal.classList.add('slide-up');
       setTimeout(() => {
         modal.classList.remove('slide-down');
       }, 500);
     });
-    modal.addEventListener('click', function (e) {
+    modal.addEventListener('click', e => {
       if (e.target == e.currentTarget) {
         modal.classList.add('slide-up');
         setTimeout(() => {

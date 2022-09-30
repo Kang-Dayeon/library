@@ -65,14 +65,14 @@
       slide.style.left = -(slideWidth + slideMargin) + 'px';
     }
 
-    nextBtn.addEventListener('click', function () {
+    nextBtn.addEventListener('click', () => {
       if (currentImg <= slideCount - 1) {
         slide.style.left = -(currentImg + 2) * (slideWidth + slideMargin) + 'px';
         slide.style.transition = `${0.5}s ease-out`;
       }
       if (currentImg === slideCount - 1) {
         //마지막 슬라이드 일때
-        setTimeout(function () {
+        setTimeout(() => {
           //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
           slide.style.left = -(slideWidth + slideMargin) + 'px';
           slide.style.transition = `${0}s ease-out`;
@@ -81,14 +81,14 @@
       }
       currentImg += 1;
     });
-    prevBtn.addEventListener('click', function () {
+    prevBtn.addEventListener('click', () => {
       //이전 버튼 눌렀을때
       if (currentImg >= 0) {
         slide.style.left = -currentImg * (slideWidth + slideMargin) + 'px';
         slide.style.transition = `${0.5}s ease-out`;
       }
       if (currentImg === 0) {
-        setTimeout(function () {
+        setTimeout(() => {
           slide.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
           slide.style.transition = `${0}s ease-out`;
         }, 500);
