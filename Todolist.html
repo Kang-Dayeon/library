@@ -89,6 +89,13 @@
       parseTodos.forEach(paintTodo);
     }
 
+    todoInput.onkeydown = (e) => {
+      if(e.keyCode == 27){
+        todoInput.blur();
+        todoInput.value = '';
+      }
+    }
+
   </script>
 </body>
 
