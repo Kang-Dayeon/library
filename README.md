@@ -1,16 +1,15 @@
 # library
 <p>
-📌 자주 쓰이는 기능들을 html,css,javascript만으로 만든 라이브러리입니다.<br/>
+📌 It is a library made of frequently used functions with only html, css, and javascript.<br/>
 <br/>
-💡기능 종류<br/>
-• Typing : 페이지가 로드된 후 타이핑을 하는듯한 애니메이션 기능<br/>
-• Tab : 탭 클릭시 하단에 탭에 관한 내용이 보이는 기능<br/>
-• Modal : 버튼 클릭시 모달창이 나타나는 기능<br/>
-• Tooltip : 해당 텍스트에 마우스오버시 부가설명 텍스트를 보여주는 기능<br/>
-• Slide : 이미지를 슬라이드 형식으로 볼 수 있는 기능<br/>
-• Sort : 각종 정렬 (가격순, 이름순, 사용자지정 정렬)<br/>
-• Accordion : 클릭하면 펼쳐지는 토글 기능<br/>
-• Todo List : localStorage를 활용하여 간단하게 리스트를 추가, 삭제 할 수 있는 기능<br/>
+💡 function type<br/>
+• Typing : Animation function that simulates typing after the page loads<br/>
+• Tab : A function that shows the contents of the tab at the bottom when clicking the tab<br/>
+• Modal : A function that pops up a modal window when a button is clicked<br/>
+• Tooltip : Ability to show additional explanation text when hovering the mouse over the text<br/>
+• Slide : Ability to view images in slide<br/>
+• Sort : Various sorts (by price, by name, by custom order)<br/>
+• Accordion : Toggle function that expands when clicked<br/>
+• Todo List : Ability to simply add or delete a list by using localStorage<br/>
 <br/>
-🚩 계속해서 생각나는 기능이 있을때마다 추가 될 예정입니다.
 </p>
