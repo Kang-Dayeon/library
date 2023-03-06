@@ -3,15 +3,15 @@
 📌 It is a library made of frequently used functions with only html, css, and javascript.
 
 ***
-####Stack
+#### Stack
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
-<img src="https://img.shields.io/badge/JacaScript-F7DF1Estyle=flat-square&logo=JacaScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6style=flat-square&logo=CSS3&logoColor=white"/>
+<img src="https://img.shields.io/badge/JacaScript-F7DF1E?style=flat-square&logo=JacaScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
 
 ***
 
-###💡 function type
+### 💡 function type
 
 • Typing : Animation function that simulates typing after the page loads
 
